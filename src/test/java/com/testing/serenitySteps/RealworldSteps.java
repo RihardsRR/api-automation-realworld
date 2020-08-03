@@ -65,4 +65,22 @@ public class RealworldSteps extends BaseSteps {
   private static String addCommentEndpoint(String slug){
     return _API_ARTICLES_ + slug + "/comments";
   }
+
+  public static void updateProfileSettings(DataTable dataTable) {
+  }
+
+  public static void createNewPost(DataTable dataTable) {
+  }
+
+  public static void deletePost() {
+  }
+
+  public static void modifyPost(DataTable dataTable) {
+  }
+
+  public static void addComment(DataTable dataTable) {
+  }
+
+  public static void deleteComment() {
+  }
 }

@@ -1,8 +1,10 @@
 package com.testing.serenityRunner;
 
 import cucumber.api.CucumberOptions;
+import cucumber.api.Scenario;
 import io.restassured.RestAssured;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.apache.commons.lang3.Validate;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -19,7 +21,7 @@ import static java.lang.Thread.sleep;
         plugin = {"pretty", "html:target/cucumber", "json:target/cucumber-report.json"},
         glue = {"com.testing.gherkinsDefinitions"}
 )
-public class TestRunner {
+public class TestRunner<account> {
   private final static Integer PORT = 7000;
   private final static Integer TIMEOUT = 45;
   private final static String URL_LOCAL = "http://localhost:" + PORT;
@@ -70,4 +72,7 @@ public class TestRunner {
     checkIfPortIsUsed = new ProcessBuilder().command("bash", "-c", CHECK_IF_PORT_IS_USED_COMMAND).start();
     return new BufferedReader(new InputStreamReader(checkIfPortIsUsed.getInputStream())).readLine() != null;
   }
+
+
+
 }

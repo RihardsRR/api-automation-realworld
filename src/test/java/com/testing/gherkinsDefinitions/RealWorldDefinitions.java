@@ -16,4 +16,35 @@ public class RealWorldDefinitions {
   public void theUserLogsIntoAccountWithFollowingData(DataTable dataTable) throws IOException {
     RealworldSteps.logIntoAccount(dataTable);
   }
+
+
+  @When("^the user updates the settings using the following data:$")
+  public void theUserUpdatesTheSettingsUsingTheFollowingData(DataTable dataTable) throws IOException {
+    RealworldSteps.updateProfileSettings(dataTable);
+  }
+
+  @When("^the user creates a post using the following data:$")
+  public void theUserCreatesAPostUsingTheFollowingData(DataTable dataTable) throws IOException {
+    RealworldSteps.createNewPost(dataTable);
+  }
+
+  @When("^the user deletes article$")
+  public void theUserDeletesArticle() {
+    RealworldSteps.deletePost();
+  }
+
+  @When("^the user modifies the post using the following data:$")
+  public void theUserModifiesThePostUsingTheFollowingData(DataTable dataTable) throws IOException {
+    RealworldSteps.modifyPost(dataTable);
+  }
+
+  @When("^the user adds a comment to the post with the following data:$")
+  public void theUserAddsACommentToThePostWithTheFollowingData(DataTable dataTable) throws IOException {
+    RealworldSteps.addComment(dataTable);
+  }
+
+  @When("^the user deletes the comment$")
+  public void theUserDeletesTheComment() {
+    RealworldSteps.deleteComment();
+  }
 }
